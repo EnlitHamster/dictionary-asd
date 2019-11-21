@@ -1,3 +1,7 @@
+# Building
+
+To build a project use the bundled makefiles. Just call `makefile` to see its usage.
+
 # Conventions
 
 This file contains the conventions used by the developers while coding this project, including those used in:
@@ -86,4 +90,4 @@ Every major algorithm has to be bundled with a method/function called `test` wit
 Depending of the language, the function will:
 - In C, dump the output about the result of every unit test on the `FILE*` that is the parameter of the function
 - In Java, dump the output about the result of every unit test on the `OutputStream` that is the parameter of the method
-For a complete guide on how to write a Unit Test, refer to [Docs > UNITTESTING.md](https://gitlab2.educ.di.unito.it/spkbns/laboratorio-algoritmi-2018-19/blob/master/Docs/UNITTESTING.md).
+For a complete guide on how to write a Unit Test, refer to [Docs > UNITTESTING.md](https://github.com/EnlitHamster/dictionary-asd/blob/master/Docs/GIT.md).
