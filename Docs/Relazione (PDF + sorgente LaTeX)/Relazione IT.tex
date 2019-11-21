@@ -1,0 +1,39 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[italian]{babel}
+
+\title{\textbf{Relazione esercizio 2}}
+\author{Daniele Liberatore, Sandro Massa, Matteo Palazzo}
+
+\begin{document}
+
+\maketitle
+
+\section*{Funzionamento edit-distance}
+Per l'implementazione in programmazione dinamica, teniamo nota delle operazioni già svolte onde evitare ridondanze. Tale tecnica, nota come \textit{memoizzazione}, è efficacie in quanto i sotto-problemi del problema originario non sono indipendenti, richiedendo operazioni ridondanti, eliminate seguento questo metodo.\\
+La matrice \textit{c} che contiene tali risultati ha per dimensioni la lunghezza delle stringhe \textit{X} e \textit{Y}. La cella $c_{ij}$ conterrà l'edit-distance tra i prefissi $X_{i}$ e $Y_{j}$. Inizialmente vuote, le celle vengono valorizzate alla prima operazione corrispondente. A meno della \textit{memoizzazione} l'algoritmo equivale alla versione ricorsiva (vedasi slide per la definizione).\\
+Vengono riportate alcune comparazioni tra le versioni dell'edit-distance:
+
+\begin{table}[h!]
+	\centering\small
+	\begin{tabular}{c|c|c|c|c}
+		\multicolumn{1}{c}{\textit{X}}
+		&\multicolumn{1}{c}{\textit{Y}}
+		&\multicolumn{1}{c}{\textit{Edit-distance}}
+		&\multicolumn{1}{c}{\textit{Ricorsivo}}
+		&\multicolumn{1}{c}{\textit{Dinamico}}\\ \hline
+		Calla                 &Palla                &1   &0.100s   &0.100s\\
+		Bcamap                &Palla                &5   &0.100s   &0.100s\\
+		Lonpirante            &Lungimirante         &4   &0.800s   &0.100s\\
+		Antocartistuzinale    &Anticostituzionale   &5   &> 30m    &0.100s\\
+	\end{tabular}
+	%   \caption{Comparazioni}
+\end{table}
+
+\section*{Funzionamento checker}
+Il \textit{Checker} confronta ogni parola presente in \textit{target} (correctme.txt) con le stringhe di \textit{dict} (dictionary.txt), associando ad ogni parola della prima una lista di parole dalla seconda con edit-distance minima. Se l'edit-distance di una parola di \textit{dict} è maggiore di quella già calcolata, questa viene ignorata.\\
+Mediamente, \textit{Checker\_Test} impiega 5 secondi per terminare, migliorando qualora si ordini in modo crescente \textit{dict} per lunghezza delle stringhe. La complessita diminuisce comunque di solo un fattore costante.
+
+\end{document}

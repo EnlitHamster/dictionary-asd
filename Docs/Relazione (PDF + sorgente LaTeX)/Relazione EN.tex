@@ -1,0 +1,40 @@
+\documentclass[a4paper,11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+
+\title{\textit{Report exercise 2}}
+\author{Daniele Liberatore, Sandro Massa, Matteo Palazzo}
+
+\begin{document}
+	
+\maketitle
+
+\section*{Edit-distance's functioning}
+For the dynamic programming implementation, we save the carried out operations to avoid redundancies. Those are due to the sub-problems not being independent from one another, making this technique, known as \textit{memoization}, very effective.\\
+The length of the strings \textit{X} and \textit{Y} are the dimensions of the matrix \textit{c} containing the results. The cell $c_{ij}$ stores the edit-distance from the prefix $X_{i}$ to $Y_{j}$. Initially all cells are empty; they will store the result of the first time the corresponding operation is called. Without \textit{memoization} the algorithm equals its recursive version (see slides for reference).\\
+Below are some comparisons between the two versions:
+
+\begin{table}[h!]
+	\centering\small
+	\begin{tabular}{c|c|c|c|c}
+		\multicolumn{1}{c}{\textit{X}}
+		&\multicolumn{1}{c}{\textit{Y}}
+		&\multicolumn{1}{c}{\textit{Edit-distance}}
+		&\multicolumn{1}{c}{\textit{Recursive}}
+		&\multicolumn{1}{c}{\textit{Dynamic}}\\ \hline
+		Calla                 &Palla                &1   &0.100s   &0.100s\\
+		Bcamap                &Palla                &5   &0.100s   &0.100s\\
+		Lonpirante            &Lungimirante         &4   &0.800s   &0.100s\\
+		Antocartistuzinale    &Anticostituzionale   &5   &> 30m    &0.100s\\
+	\end{tabular}
+	%   \caption{Comparazioni}
+\end{table}
+
+\section*{Checker's functioning}
+\textit{Checker} compares each word from \textit{target} (correctme.txt) with each one in \textit{dict} (dictionary.txt), associating to each word of the former a list of words of the latter with minimum edit-distance. If a \textit{dict} word's edit-distance is higher than the one already calculated, the former is ignored.\\
+\textit{Checker\_Test} terminates in an average of 5 seconds; performances increase if the \textit{dict} is ordered by increasing length of its words. Complexity however changes only by a constant factor.
+	
+\end{document}
+

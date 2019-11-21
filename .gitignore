@@ -1,0 +1,15 @@
+/bin/
+.classpath
+.project
+*.o
+*.out
+*.exe
+*.gch
+*.class
+*.test
+*.bak
+testing/
+**/correctme.txt
+**/dictionary.txt
+**/italian_dist_graph.csv
+*.bak
