@@ -1,6 +1,9 @@
 #ifndef __PREPROC_BOOSTER_H__
 #define __PREPROC_BOOSTER_H__
 
+// The preprocessor booster is used to define which implementation to be
+// used to compile all the files using C lists as implemented in exercise 1
+
 #define PPB_IDENT(X) X
 #define PPB_XSTR(X) #X
 #define PPB_STR(X) PPB_XSTR(X)

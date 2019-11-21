@@ -90,7 +90,6 @@ bool list_pop(list_t list)
 	}
 
 	--(list->used);
-	// free(list->arr + list->used * list->elemSize);
 	return true;
 }
 
@@ -112,7 +111,6 @@ bool list_remove(list_t list, size_t pos)
 	}
 
 	--(list->used);
-	// free(list->arr + list->used * list->elemSize);
 	return true;
 }
 

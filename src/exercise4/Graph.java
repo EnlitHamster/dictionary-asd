@@ -18,42 +18,51 @@ public abstract class Graph<V, L extends Comparable<L>> {
   /**
    * Add an edge on the array if both vertex1 and vertex2 are contained
    * If the vertex already exist, the original label is overitten with the new one
+   *
    * @param vertex1 the start of the edge
    * @param vertex2 the end of the edge
    * @param label the label of the edge
+   *
    * @return true on success, false otherwise
    */
   public abstract boolean addEdge(V vertex1, V vertex2, L label);
 
 	/**
    * Function used to know if the Graph is Directed or not
+   *
 	 * @return true if the graph is Directed, false otherwise
 	 */
   public abstract boolean isDirected();
 
 	/**
    * Delete an edge from the graph if both vertex1 and vertex2 are contained
+   *
 	 * @param vertex1 the start of the edge
 	 * @param vertex2 the end of the edge
+   *
 	 * @return true on success, false otherwise
 	 */
 	public abstract boolean deleteEdge(V vertex1, V vertex2);
 
 	/**
    * Count the number of edge in the graph
+   *
 	 * @return the number of edge in the graph
 	 */
 	public abstract int countEdge();
 
 	/**
    * The function return the set of edge in che graph
+   *
 	 * @return the set of edge
 	 */
   public abstract ArrayList<Edge<V, L>> edgeSet();
 
 	/**
    * Add a vertex if not already contained
+   *
 	 * @param vertex the vertex that must be added
+   *
 	 * @return true on success, false otherwise
 	 */
 	public boolean addVertex(V vertex) {
@@ -67,7 +76,9 @@ public abstract class Graph<V, L extends Comparable<L>> {
 
 	/**
    * Check if a vertex is contained
+   *
 	 * @param vertex the vertex that must be find
+   *
 	 * @return true if the vertex is contained, false otherwise
 	 */
 	public boolean containsVertex(V vertex) {
@@ -76,7 +87,9 @@ public abstract class Graph<V, L extends Comparable<L>> {
 
 	/**
    * Check if a vertex is contained
+   *
 	 * @param vertex the vertex that must be find
+   *
 	 * @return true if the vertex is contained, false otherwise
 	 */
 	public boolean containsEdge(V vertex1, V vertex2) {
@@ -94,7 +107,9 @@ public abstract class Graph<V, L extends Comparable<L>> {
 
 	/**
    * Delete a vertex from the graph if it is contained
+   *
 	 * @param vertex the vertex that must be deleted
+   *
 	 * @return true on success, false otherwise
 	 */
 	public boolean deleteVertex(V vertex) {
@@ -116,6 +131,7 @@ public abstract class Graph<V, L extends Comparable<L>> {
 
 	/**
    * The function return the set of vertex of the graph
+   *
 	 * @return the set of vertex
 	 */
 	public ArrayList<V> vertexSet() {
@@ -124,7 +140,9 @@ public abstract class Graph<V, L extends Comparable<L>> {
 
 	/**
    * Find all the neighbor of a vertex
-	 * @param vertex the vertex of whom the neighbor must be founf
+   *
+	 * @param vertex the vertex of whom the neighbor must be found
+   *
 	 * @return the neighbor of the vertex
 	 */
 	public ArrayList<V> neighbors(V vertex) {
@@ -137,8 +155,10 @@ public abstract class Graph<V, L extends Comparable<L>> {
 
 	/**
    * Find the label of a edge between two vertex if the edge exist
+   *
 	 * @param vertex1 the start of the edge
 	 * @param vertex2 the end of the edge
+   *
 	 * @return the label of the edge, null if the edge doesn't exist
 	 */
 	public L getLabel(V vertex1, V vertex2) {
@@ -154,6 +174,7 @@ public abstract class Graph<V, L extends Comparable<L>> {
 
 	/**
    * Find the number of vertex of the graph
+   *
 	 * @return the number of vertex
 	 */
 	public int countVertex() {
